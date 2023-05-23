@@ -18,11 +18,11 @@ import typing
 
 
 class SpecClassIdentificationError(Exception):
-    """Raised when cannot find spec_сlass for spec_field value.
+    """An exception that is raised when a specification сlass can't be find for a field specification name.
 
     Attributes:
-        spec_field: value that defines spec_class type
-        spec_enum: enum class containing spec_class possible types
+        spec_field: The field specification name.
+        spec_enum: An enumeration with all known specification names.
     """
 
     def __init__(
@@ -40,12 +40,12 @@ class SpecClassIdentificationError(Exception):
 
 
 class FailedOperation(Exception):
-    """Raised when an operation failed.
+    """An exception that is raised when an operation fails.
 
-    Could be raised when an inner operation failed.
+    It could be raised when an inner operation fails.
 
     Attributes:
-        operation: Instance of failed operation.
+        operation: The instance of the failed operation.
     """
 
     def __init__(self, *, operation: typing.Optional[typing.Any] = None) -> None:
@@ -57,14 +57,14 @@ class FailedOperation(Exception):
 
 
 class ApiError(Exception):
-    """Error returned from the API Call.
+    """A base class for exceptions that are raised when API methods return errors.
 
     Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     def __init__(
@@ -88,15 +88,15 @@ class ApiError(Exception):
 
 
 class ValidationApiError(ApiError):
-    """Field validation error returned from the API Call.
+    """An exception for a field validation error returned by an API method.
 
     Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
-        invalid_fields: the list of the invalid fields
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
+        invalid_fields: A list of invalid fields.
     """
 
     status_code: typing.Optional[int]
@@ -109,11 +109,11 @@ class ValidationApiError(ApiError):
 
 class InternalApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -125,11 +125,11 @@ class InternalApiError(ApiError):
 
 class AuthenticationApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -141,11 +141,11 @@ class AuthenticationApiError(ApiError):
 
 class AccessDeniedApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -157,11 +157,11 @@ class AccessDeniedApiError(ApiError):
 
 class RemoteServiceUnavailableApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -173,11 +173,11 @@ class RemoteServiceUnavailableApiError(ApiError):
 
 class DoesNotExistApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -189,11 +189,11 @@ class DoesNotExistApiError(ApiError):
 
 class ConflictStateApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -205,11 +205,11 @@ class ConflictStateApiError(ApiError):
 
 class TooManyRequestsApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]
@@ -221,11 +221,11 @@ class TooManyRequestsApiError(ApiError):
 
 class IncorrectActionsApiError(ApiError):
     """Attributes:
-        status_code: response status code.
-        request_id: request ID
-        code: error code string
-        message: error message
-        payload: additional payload
+        status_code: A HTTP response status code.
+        request_id: The ID of the request that returns an error.
+        code: An error code.
+        message: An error description.
+        payload: Additional data describing an error.
     """
 
     status_code: typing.Optional[int]

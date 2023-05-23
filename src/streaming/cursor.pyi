@@ -18,9 +18,10 @@ import toloka.client.search_requests
 import toloka.client.user_restriction
 import toloka.streaming.event
 import typing
+import typing_extensions
 
 
-class ResponseObjectType(typing.Protocol):
+class ResponseObjectType(typing_extensions.Protocol):
     def __subclasshook__(other): ...
 
     def __init__(
